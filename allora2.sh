@@ -73,6 +73,11 @@ services:
           - updater
         ipv4_address: 172.22.0.5
     restart: always
+    deploy:
+      resources:
+        limits:
+          cpus: '0.05'
+          memory: 50M
 
   worker-1:
     container_name: worker-1
@@ -112,6 +117,11 @@ services:
           - worker-1
         ipv4_address: 172.22.0.11
     restart: always
+    deploy:
+      resources:
+        limits:
+          cpus: '0.05'
+          memory: 50M
 
   worker-2:
     container_name: worker-2
@@ -151,7 +161,11 @@ services:
           - worker-2
         ipv4_address: 172.22.0.12
     restart: always
-
+    deploy:
+      resources:
+        limits:
+          cpus: '0.05'
+          memory: 50M
 
   worker-7:
     container_name: worker-7
@@ -191,7 +205,11 @@ services:
           - worker-7
         ipv4_address: 172.22.0.17
     restart: always
-
+    deploy:
+      resources:
+        limits:
+          cpus: '0.05'
+          memory: 50M
 
   worker-10:
     container_name: worker-10
@@ -231,7 +249,12 @@ services:
           - worker-10
         ipv4_address: 172.22.0.20
     restart: always
-
+    deploy:
+      resources:
+        limits:
+          cpus: '0.05'
+          memory: 50M
+          
   worker-11:
     container_name: worker-11
     environment:
@@ -269,7 +292,12 @@ services:
         aliases:
           - worker-11
         ipv4_address: 172.22.0.21
-    restart: always    
+    restart: always
+    deploy:
+      resources:
+        limits:
+          cpus: '0.05'
+          memory: 50M
 
 networks:
   eth-model-local:
